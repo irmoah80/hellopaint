@@ -7,10 +7,10 @@ In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** an
 ##  **Redo Algorithm** :
 first check the base of algorithm :
 
-> 1 - by press "Ctrl+Z" function called
-> 1.5 - if **main**  is last empty (except the white fill at first) go ahead
-> 2 - push **pop** of **main** in **cache**
-> 3 - equal the **Canvas** image to **top** of **main** stack
+> 1 - by press "Ctrl+Z" function called \n
+> 1.5 - if **main**  is last empty (except the white fill at first) go ahead \n
+> 2 - push **pop** of **main** in **cache** \n
+> 3 - equal the **Canvas** image to **top** of **main** stack \n
 > 4 - done!
 
 before implement undo/redo function , we need to push each level in **main stack** :
