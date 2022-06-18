@@ -69,9 +69,13 @@ the `QApplication.beep()` is make a default error **beep** in your OS , and , fo
 like the previous , first , let check the base algorithm:
 
 > 1- By pressing  " Ctrl+Alt+Z " the function is called
+> 
 > 1.5- if the **cache** stack is not empty , continue
+> 
 > 2- push **pop** of **cache** in **main**
+> 
 > 3- equal the **Canvas** image to **top** of **main** stack
+> 
 > 4- done!
 
 like the Undo function , we have 3 Redo Function , at the same position.
