@@ -1,8 +1,10 @@
 # Hellopaint!
-a very simple paint use QT in python. the aim of this project is to make the paint app via **undo/redo** function. Thanks for "geeksforgeeks" website.
+a very simple paint use QT library in python. the aim of this project is to make the paint app via **undo/redo** function. Thanks for "[geeksforgeeks](https://www.geeksforgeeks.org/pyqt5-create-paint-application/)" website and our TA "Ali Shafiee".
 
 # Algorithm of Undo/Redo implemention
-In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** and  **stack_cach**. **main** is use for **undo** function and on the other hand **cache** used for **redo** function.
+In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** and  **stack_cach**. **main** is use for **undo** function and on the other hand **cache** used for **redo** function. The idea is to Save (capture) a frame when user release the left click.
+
+
 
 ##  **Redo Algorithm** :
 first check the base of algorithm :
@@ -96,9 +98,18 @@ it has 3 main function : push , undo & redo :
 		    self.stack_main = stack.Stack()
 		    self.stack_cach = stack.Stack()
 		    
-	    def push(s , v):
+		def push(s , v):
 		    ...
-	    def undo(s , v):
-		    ...
-	    def redo(s , v):
-		    ...
+		def undo(s , v):
+			...
+		def redo(s , v):
+			...
+
+#  Shortcuts :
+based on photoshop shortcuts :))
+
+| function | shortcut keys |
+|--|--|
+| Undo | `Ctrl + Z` |
+| Redo | `Ctrl + Alt + Z` |
+| Save | `Ctrl + S` 
