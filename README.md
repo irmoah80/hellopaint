@@ -33,6 +33,7 @@ Before implement undo/redo function , we need to push each level in **main stack
 		    s.stack_main.push(v)
 
 The `s.c_cach()` is function that clear the **cache** , why? When we draw after (for example) 3 undo, the indexes stored in the cache will be unused , as result , we have to clear **cache** stack.
+
 In this project , we have **3 undo** function for this way , first & second at **main.py** :
 
     class  Canvas(QLabel):
