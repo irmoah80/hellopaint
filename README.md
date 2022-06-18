@@ -1,5 +1,5 @@
 # Hellopaint!
-a very simple paint use QT library in python. the aim of this project is to make the paint app via **undo/redo** function. Thanks for "[geeksforgeeks](https://www.geeksforgeeks.org/pyqt5-create-paint-application/)" website and our TA "Ali Shafiee".
+A very simple paint use QT library in python. the aim of this project is to make the paint app via **undo/redo** function. Thanks for "[geeksforgeeks](https://www.geeksforgeeks.org/pyqt5-create-paint-application/)" website and our TA "Ali Shafiee".
 
 # Algorithm of Undo/Redo implemention
 In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** and  **stack_cach**. **main** is use for **undo** function and on the other hand **cache** used for **redo** function. The idea is to Save (capture) a frame when user release the left click.
@@ -7,7 +7,7 @@ In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** an
 
 
 ##  **Redo Algorithm** :
-first check the base of algorithm :
+First check the base of algorithm :
 
 > 1 - by press "Ctrl+Z" function called
 > 
@@ -19,7 +19,7 @@ first check the base of algorithm :
 > 
 > 4 - done!
 
-before implement undo/redo function , we need to push each level in **main stack** :
+Before implement undo/redo function , we need to push each level in **main stack** :
 
     def  mouseReleaseEvent(self, e):
 	    if  e.button() == Qt.LeftButton:
@@ -32,6 +32,7 @@ before implement undo/redo function , we need to push each level in **main stack
 		    s.c_cach()
 		    s.stack_main.push(v)
 
+The `s.c_cach()` is function that clear the **cache** , why? When we draw after (for example) 3 undo, the indexes stored in the cache will be unused , as result , we have to clear **cache** stack.
 In this project , we have **3 undo** function for this way , first & second at **main.py** :
 
     class  Canvas(QLabel):
@@ -88,8 +89,8 @@ like the Undo function , we have 3 Redo Function , at the same position.
 
 ##  **Why "RedoUndo" Class?** :
 
-just because we want make a clean project :). this class is in " undo_redo.py " and the work is to manage the "undo & redo" task.
-it has 3 main function : push , undo & redo :
+Just because we want make a clean project :). this class is in " undo_redo.py " and the work is to manage the "undo & redo" task.
+It has 3 main function : push , undo & redo :
 
     class UndoRedo:
 	    stack_main = None
@@ -106,10 +107,13 @@ it has 3 main function : push , undo & redo :
 			...
 
 #  Shortcuts :
-based on photoshop shortcuts :))
+Based on photoshop shortcuts :))
 
 | function | shortcut keys |
 |--|--|
 | Undo | `Ctrl + Z` |
 | Redo | `Ctrl + Alt + Z` |
 | Save | `Ctrl + S` 
+
+
+
