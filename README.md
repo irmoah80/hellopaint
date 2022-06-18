@@ -90,16 +90,17 @@ just because we want make a clean project :). this class is in " undo_redo.py " 
 it has 3 main function : push , undo & redo :
 
     class UndoRedo:
-	    stack_main = None
-	    stack_cach = None
-	    def __init__(self) -> None:
-		    self.stack_main = stack.Stack()
-		    self.stack_cach = stack.Stack()
+    	stack_main = None
+	stack_cach = None
+	
+	def __init__(self) -> None:
+		self.stack_main = stack.Stack()
+		self.stack_cach = stack.Stack()
 		    
-		def push(s , v):
-		    ...
-		def undo(s , v):
-			...
-		def redo(s , v):
-			...
+	def push(s , v):
+		...
+	def undo(s , v):
+		...
+	def redo(s , v):
+		...
 
