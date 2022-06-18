@@ -8,13 +8,9 @@ In this case , we use **stack** dsa. by using 2 Stacks , named **stack_main** an
 first check the base of algorithm :
 
 > 1 - by press "Ctrl+Z" function called
-> 
 > 1.5 - if **main**  is last empty (except the white fill at first) go ahead
-> 
 > 2 - push **pop** of **main** in **cache**
-> 
-> 3 - equal the **Canvas** image to **top** of **main** stack
-> 
+> 3 - equal the **Canvas** image (here we have **pixmap**) to **top** of **main** stack
 > 4 - done!
 
 before implement undo/redo function , we need to push each level in **main stack** :
@@ -70,7 +66,15 @@ the next and last one is undo function in **undo_redo.py** :
 the `QApplication.beep()` is make a default error **beep** in your OS , and , for the condition , ````s.stack_main.size() == 1```` , cause is we have not delete the **white** screen that push it manually at the first.
 
 ##  **Undo Algorithm** :
-like the previous , first , let check the base algorithm
+like the previous , first , let check the base algorithm:
 
+> 1- By pressing  " Ctrl+Alt+Z " the function is called
+> 1.5- if the **cache** stack is not empty , continue
+> 2- push **pop** of **cache** in **main**
+> 3- equal the **Canvas** image to **top** of **main** stack
+> 4- done!
 
+like the Undo function , we have 3 Redo Function , at the same position.
 
+##  **Why "RedoUndo" Class?** :
+test
