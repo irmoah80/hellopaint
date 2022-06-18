@@ -85,4 +85,21 @@ like the previous , first , let check the base algorithm:
 like the Undo function , we have 3 Redo Function , at the same position.
 
 ##  **Why "RedoUndo" Class?** :
-test
+
+just because we want make a clean project :). this class is in " undo_redo.py " and the work is to manage the "undo & redo" task.
+it has 3 main function : push , undo & redo :
+
+    class UndoRedo:
+	    stack_main = None
+	    stack_cach = None
+	    def __init__(self) -> None:
+		    self.stack_main = stack.Stack()
+		    self.stack_cach = stack.Stack()
+		    
+		def push(s , v):
+		    ...
+		def undo(s , v):
+			...
+		def redo(s , v):
+			...
+
