@@ -21,21 +21,23 @@ First check the base of algorithm :
 
 Before implement undo/redo function , we need to push each level in **main stack** :
 
+```python
     def  mouseReleaseEvent(self, e):
 	    if  e.button() == Qt.LeftButton:
 			self.ur.push(self.pixmap().copy()) #push in main stack
 			...
+```
 **ur** is an object , from *UndoRedo* from undo_redo.py , push function :
-
+```python
     def  push(s , v):
 	    if  not  s.stack_cach.is_empty():
 		    s.c_cach()
 		    s.stack_main.push(v)
-
+```
 The `s.c_cach()` is function that clear the **cache** , why? When we draw after (for example) 3 undo, the indexes stored in the cache will be unused , as result , we have to clear **cache** stack.
 
 In this project , we have **3 undo** function for this way , first & second at **main.py** :
-
+```python
     class  Canvas(QLabel):
 	    ...
 	    def  undo(self):
@@ -47,9 +49,9 @@ In this project , we have **3 undo** function for this way , first & second at *
 	class  MainWindow(QMainWindow):
 		def  undo(s):
 			s.canvas.undo()
-
+```
 We want to make an **Widget** for paint area , in main window , this is the reason of class " Canvas " :
-
+```python
 	class  MainWindow(QMainWindow):
 		def  __init__(self):
 			super().__init__()
@@ -57,9 +59,9 @@ We want to make an **Widget** for paint area , in main window , this is the reas
 			l = QtWidgets.QVBoxLayout() # vertical layout
 			w.setLayout(l)
 			l.addWidget(self.canvas)
-
+```
 the next and last one is undo function in **undo_redo.py** :
-
+```python
     import stack
     from PyQt5.QtWidgets import QApplication
 	    class UndoRedo:
@@ -71,6 +73,7 @@ the next and last one is undo function in **undo_redo.py** :
 				
 				s.stack_cach.push(s.stack_main.pop())
 				return s.stack_main.top()
+```
 the `QApplication.beep()` is make a default error **beep** in your OS , and , for the condition , ````s.stack_main.size() == 1```` , cause is we have not delete the **white** screen that push it manually at the first.
 
 ##  **Undo Algorithm** :
@@ -93,6 +96,7 @@ like the Undo function , we have 3 Redo Function , at the same position.
 Just because we want make a clean project :). this class is in " undo_redo.py " and the work is to manage the "undo & redo" task.
 It has 3 main function : push , undo & redo :
 
+```python
     class UndoRedo:
 	    stack_main = None
 	    stack_cach = None
@@ -106,7 +110,7 @@ It has 3 main function : push , undo & redo :
 			...
 		def redo(s , v):
 			...
-
+```
 #  Shortcuts :
 Based on photoshop shortcuts :))
 
